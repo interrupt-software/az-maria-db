@@ -42,3 +42,19 @@ data "azurerm_mariadb_server" "db_server" {
 output "mariadb_server_id" {
   value = data.azurerm_mariadb_server.db_server.id
 }
+
+output "mariadb_server_fqdn" {
+  value = data.azurerm_mariadb_server.db_server.fqdn
+}
+
+output "mariadb_server_location" {
+  value = data.azurerm_mariadb_server.db_server.location
+}
+
+output "mariadb_server_login" {
+  value = data.azurerm_mariadb_server.db_server.administrator_login
+}
+
+output "mariadb_server_login_pw" {
+  value = data.azurerm_mariadb_server.db_server.administrator_login_password
+}
