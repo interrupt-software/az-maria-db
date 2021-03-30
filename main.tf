@@ -9,8 +9,8 @@ resource "azurerm_resource_group" "main" {
 
 resource "azurerm_mariadb_server" "mariadb" {
   name                = "${var.prefix}-mariadb"
-  resource_group_name = "${var.prefix}-rg"
-  location            = var.location
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
 
   administrator_login          = var.db_admin
   administrator_login_password = var.db_password
@@ -28,8 +28,8 @@ resource "azurerm_mariadb_server" "mariadb" {
 
 resource "azurerm_mariadb_database" "sample" {
   name                = var.db_name
-  resource_group_name = "${var.prefix}-rg"
-  server_name         = "${var.prefix}-mariadb"
+  resource_group_name = azurerm_resource_group.main.name
+  server_name         = azurerm_mariadb_server.mariadb.name
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
 }
