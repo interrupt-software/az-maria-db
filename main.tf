@@ -36,7 +36,7 @@ resource "azurerm_mariadb_database" "sample" {
 
 data "azurerm_mariadb_server" "db_server" {
   name                = azurerm_mariadb_database.sample.name
-  resource_group_name = azurerm_mariadb_database.sample.resource_group_name
+  resource_group_name = azurerm_mariadb_server.mariadb.resource_group_name
 }
 
 output "mariadb_server_id" {
