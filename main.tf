@@ -35,7 +35,7 @@ resource "azurerm_mariadb_database" "sample" {
 }
 
 data "azurerm_mariadb_server" "db_server" {
-  name                = azurerm_mariadb_database.sample.name
+  name                = azurerm_mariadb_server.mariadb.name
   resource_group_name = azurerm_mariadb_server.mariadb.resource_group_name
 }
 
