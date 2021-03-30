@@ -54,3 +54,7 @@ output "mariadb_server_location" {
 output "mariadb_server_login" {
   value = data.azurerm_mariadb_server.db_server.administrator_login
 }
+
+output "mariadb_server_storage_profile" {
+  value = data.azurerm_mariadb_server.db_server.storage_profile
+}
