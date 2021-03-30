@@ -26,35 +26,35 @@ resource "azurerm_mariadb_server" "mariadb" {
   ssl_enforcement_enabled       = true
 }
 
-resource "azurerm_mariadb_database" "sample" {
-  name                = var.db_name
-  resource_group_name = azurerm_resource_group.main.name
-  server_name         = azurerm_mariadb_server.mariadb.name
-  charset             = "utf8"
-  collation           = "utf8_unicode_ci"
-}
+# resource "azurerm_mariadb_database" "sample" {
+#   name                = var.db_name
+#   resource_group_name = azurerm_resource_group.main.name
+#   server_name         = azurerm_mariadb_server.mariadb.name
+#   charset             = "utf8"
+#   collation           = "utf8_unicode_ci"
+# }
 
-data "azurerm_mariadb_server" "db_server" {
-  name                = azurerm_mariadb_server.mariadb.name
-  resource_group_name = azurerm_mariadb_server.mariadb.resource_group_name
-}
+# data "azurerm_mariadb_server" "db_server" {
+#   name                = azurerm_mariadb_server.mariadb.name
+#   resource_group_name = azurerm_mariadb_server.mariadb.resource_group_name
+# }
 
-output "mariadb_server_id" {
-  value = data.azurerm_mariadb_server.db_server.id
-}
+# output "mariadb_server_id" {
+#   value = data.azurerm_mariadb_server.db_server.id
+# }
 
-output "mariadb_server_fqdn" {
-  value = data.azurerm_mariadb_server.db_server.fqdn
-}
+# output "mariadb_server_fqdn" {
+#   value = data.azurerm_mariadb_server.db_server.fqdn
+# }
 
-output "mariadb_server_location" {
-  value = data.azurerm_mariadb_server.db_server.location
-}
+# output "mariadb_server_location" {
+#   value = data.azurerm_mariadb_server.db_server.location
+# }
 
-output "mariadb_server_login" {
-  value = data.azurerm_mariadb_server.db_server.administrator_login
-}
+# output "mariadb_server_login" {
+#   value = data.azurerm_mariadb_server.db_server.administrator_login
+# }
 
-output "mariadb_server_storage_profile" {
-  value = data.azurerm_mariadb_server.db_server.storage_profile
-}
+# output "mariadb_server_storage_profile" {
+#   value = data.azurerm_mariadb_server.db_server.storage_profile
+# }
