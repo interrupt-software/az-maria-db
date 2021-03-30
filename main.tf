@@ -40,5 +40,5 @@ data "azurerm_mariadb_server" "db_server" {
 }
 
 output "mariadb_server_id" {
-  value = data.azurerm_mariadb_server.example.id
+  value = data.azurerm_mariadb_server.sample.id
 }
