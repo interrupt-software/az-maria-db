@@ -33,3 +33,12 @@ resource "azurerm_mariadb_database" "sample" {
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
 }
+
+data "azurerm_mariadb_server" "db_server" {
+  name                = azurerm_mariadb_database.sample.name
+  resource_group_name = azurerm_mariadb_database.sample.resource_group_name
+}
+
+output "mariadb_server_id" {
+  value = data.azurerm_mariadb_server.example.id
+}
