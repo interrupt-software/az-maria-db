@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-rg"
-  location = var.location
+  location = "Canada Central"
 }
 
 resource "azurerm_mariadb_server" "mariadb" {
