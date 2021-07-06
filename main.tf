@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-patrick"
+  name     = "${var.prefix}-peter"
   location = var.location
 }
 
